@@ -1,0 +1,11 @@
+<h2>Nuevo jugador</h2>
+
+<form #formJugador="ngForm" ((ngSubmit)="onSubmit()">
+  <label for="nombre">nombre:</label>
+  <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="jugador.nombre">
+
+  <label for="puntuacion">puntuacion:</label>
+  <input type="number" name="puntuacion" #puntuacion="ngModel" [(ngModel)]="jugador.puntuacion">
+
+  <input type="submit" value="guardar">
+</form>
