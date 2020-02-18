@@ -13,12 +13,30 @@ export class ListaJugadorComponent implements OnInit {
   constructor(public jugadorService: JugadorService) { }
 
   ngOnInit() {
+    this.getPuntuaciones();
+  }
+
+  getPuntuaciones() {
     this.jugadorService.getAllJugadores().subscribe(
       result => {
         this.listaJugadores = result['datos'];
       },
       error => {
         alert('error al listar las puntuaciones');
+      },
+      () => {
+
+      }
+    );
+  }
+
+  onBorrarPuntuacion(id: string) {
+    this.jugadorService.removeJugador(id).subscribe(
+      result => {
+        this.getPuntuaciones();
+      },
+      error => {
+        alert(`error al borrar la puntuacion ${error}`);
       },
       () => {
 

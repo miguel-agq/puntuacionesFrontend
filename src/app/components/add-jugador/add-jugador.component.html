@@ -1,6 +1,6 @@
 <h2>Nuevo jugador</h2>
 
-<form #formJugador="ngForm" ((ngSubmit)="onSubmit()">
+<form #formJugador="ngForm" (ngSubmit)="onSubmit()">
   <label for="nombre">nombre:</label>
   <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="jugador.nombre">
 

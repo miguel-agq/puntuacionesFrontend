@@ -2,6 +2,14 @@
 
 <div *ngFor="let j of listaJugadores">
   {{j.nombre}}
-  <br>
+
+  &nbsp;&nbsp;
+
   {{j.puntuacion}}
+
+  <a (click)="onBorrarPuntuacion(j._id)"href="#">borrar</a>
+
+  &nbsp;&nbsp;
+
+  <a [routerLink]="['/editJugador', j._id]" href="#">editar</a>
 </div>
