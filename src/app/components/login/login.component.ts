@@ -23,12 +23,10 @@ export class LoginComponent implements OnInit {
   onSubmit(formValue) {
     this.authService.login(formValue.email, formValue.password).subscribe(
       result => {
-        const datos = JSON.stringify({ email: formValue.email, token: result });
+        const datos = JSON.stringify( {email: formValue.email, token: result } );
         localStorage.setItem('currentUser', datos);
       },
-      error => {
-        alert('error al loguearte');
-      }
+      error => console.log(error)
     );
     // alert('Se ha enviado el formulario correctamente:' + formValue.email + ' ' + formValue.password);
   }
